@@ -61,7 +61,7 @@ jobs:
         run: cd frontend && ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
-        run: cd frontend && ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: echo "checking config before build"; cd frontend ; cat next.config.ts ; ${{ steps.detect-package-manager.outputs.runner }} next build
 
       # - name: Export static files
       #   run: cd frontend && ${{ steps.detect-package-manager.outputs.runner }} next export
